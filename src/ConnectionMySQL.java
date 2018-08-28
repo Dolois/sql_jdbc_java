@@ -8,10 +8,10 @@ public class ConnectionMySQL
 {
 	public void recupererMesDonnes()
 	{
-		String url = "jdbc:mysql://localhost/formation";
+		String url = "jdbc:mysql://localhost/formation?useSSL=false";
 		String user = "root";
 		String pwd= "Dauphyn1";
-				
+
 		Connection cn = null;
 		Statement st = null;
 			
@@ -31,7 +31,7 @@ public class ConnectionMySQL
 			String sql =	"SELECT * FROM bibliotheque_db.livre\r\n" + 
 							"INNER JOIN bibliotheque_db.auteur\r\n" + 
 							"WHERE id_auteur = ref_auteur\r\n" + 
-							"AND id_auteur = 4;";
+							"AND id_auteur = 4";
 					
 			// exécution requete
 			ResultSet result = st.executeQuery(sql);
